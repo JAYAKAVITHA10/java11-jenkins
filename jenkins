@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Install maven') {
             steps {
-                echo 'sh 'sudo spt install mvn.y''
+                echo sh 'sudo spt install mvn.y'
             }
         }
     }
