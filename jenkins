@@ -2,25 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage('push') {
             steps {
-                echo 'build'
+                withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'password', usernameVariable: 'username')]) {
+    // some block
+}
             }
         }
-        stage('test') {
-            steps {
-                echo 'test'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deploy'
-            }
-        }
-        stage('Install maven') {
-            steps {
-                echo sh 'sudo spt install mvn.y'
-            }
-        }
+       
     }
 }
